@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A1Iw0WWl6u2HBQBa0h8x5yJLfVkdPhLn0B+p6s4Lpk7taqO9mjBssl146f4snif1KUI6DOz38I1f1tVgGQLJGg==",
+  "dgSpecHash": "UDOVODLZPKN+t/PUwnrSHQspbDyAK3kektqHTTreeqg4l3RffoaCMM3HhSx/NxvGhmvrW8Jc+3yLduZC4F7qZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vl4xd\\Рабочий стол\\KONTROL\\KONTROL.csproj",
+  "projectFilePath": "C:\\Users\\vl4xd\\Рабочий стол\\kontrol_\\KONTROL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vl4xd\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.0.4\\microsoft.dotnet.platformabstractions.2.0.4.nupkg.sha512",
     "C:\\Users\\vl4xd\\.nuget\\packages\\microsoft.extensions.dependencymodel\\2.0.4\\microsoft.extensions.dependencymodel.2.0.4.nupkg.sha512",

@@ -97,11 +97,6 @@ namespace KONTROL
                 return;
             }
 
-            if (name != null)
-            {
-                dataGridView1.Visible = false;
-            }
-
             /*            ContractsObjectsForm form = new ContractsObjectsForm(response);
                         form.contrData = response;
                         form.Show();*/

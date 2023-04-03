@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vl4xd\\Рабочий стол\\KONTROL\\KONTROL.csproj": {}
+    "C:\\Users\\vl4xd\\Рабочий стол\\kontrol_\\KONTROL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vl4xd\\Рабочий стол\\KONTROL\\KONTROL.csproj": {
+    "C:\\Users\\vl4xd\\Рабочий стол\\kontrol_\\KONTROL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vl4xd\\Рабочий стол\\KONTROL\\KONTROL.csproj",
+        "projectUniqueName": "C:\\Users\\vl4xd\\Рабочий стол\\kontrol_\\KONTROL.csproj",
         "projectName": "KONTROL",
-        "projectPath": "C:\\Users\\vl4xd\\Рабочий стол\\KONTROL\\KONTROL.csproj",
+        "projectPath": "C:\\Users\\vl4xd\\Рабочий стол\\kontrol_\\KONTROL.csproj",
         "packagesPath": "C:\\Users\\vl4xd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vl4xd\\Рабочий стол\\KONTROL\\obj\\",
+        "outputPath": "C:\\Users\\vl4xd\\Рабочий стол\\kontrol_\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vl4xd\\AppData\\Roaming\\NuGet\\NuGet.Config",

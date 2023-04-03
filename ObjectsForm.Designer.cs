@@ -36,7 +36,6 @@
             panel1 = new Panel();
             buttonBackToChoiceForm = new Button();
             dataGridView1 = new DataGridView();
-            tableLayoutPanel1 = new TableLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -131,26 +130,12 @@
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
             // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Location = new Point(99, 182);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(320, 199);
-            tableLayoutPanel1.TabIndex = 3;
-            // 
             // ObjectsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(tableLayoutPanel1);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Name = "ObjectsForm";
@@ -167,6 +152,5 @@
         private Panel panel1;
         private DataGridView dataGridView1;
         private Button buttonBackToChoiceForm;
-        private TableLayoutPanel tableLayoutPanel1;
     }
 }
