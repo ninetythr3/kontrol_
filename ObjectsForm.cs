@@ -84,48 +84,88 @@ namespace KONTROL
         {
             int row = e.RowIndex;
             DataGridViewRow selectedRow = dataGridView1.Rows[row];
-            string? name = selectedRow.Cells["name"].Value.ToString(); // Здесь "name" - это название столбца в таблице
+            // полученаем значения ячейки
+            string myVar = dataGridView1.Rows[row].Cells["name"].Value.ToString();
 
-            string url = "http://localhost/contracts.php?name=" + name;
+            // отправляем запрос к PHP-скрипту с переменной
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost/contractdemo.php");
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
 
-            string response = await GetResponseAsync(url);
+            // отправка переменной в запросе
+            string postData = "name=" + myVar;
+            byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+            request.ContentLength = byteArray.Length;
+            Stream stream = request.GetRequestStream();
+            stream.Write(byteArray, 0, byteArray.Length);
+            stream.Close();
 
-            if (response.Contains("error"))
-            {
-                // Если есть ошибки, выводит сообщение об ошибке и завершает метод
-                MessageBox.Show("Произошла ошибка при получении данных из базы");
-                return;
-            }
+            // получаем ответ от PHP-скрипта
+            var response = (HttpWebResponse)request.GetResponse();
+            var responseStream = response.GetResponseStream();
+            var reader = new StreamReader(responseStream, Encoding.UTF8);
+            var responseString = reader.ReadToEnd();
+
+            MessageBox.Show(responseString);
+
+           /* ContractsObjectsForm form2 = new ContractsObjectsForm(name);
+            form2.Show();*/
+
+
+
+
+
+
+
+
+
+
+
+            /*
+             *             // Отправка переменной в запросе
+            int row = e.RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[row];
+            string? str_table = selectedRow.Cells["name"].Value.ToString(); // Здесь "name" - это название столбца в таблице
+                        string url = "http://localhost/contracts.php?name=" + name;
+
+                        string response = await GetResponseAsync(url);
+
+                        if (response.Contains("error"))
+                        {
+                            // Если есть ошибки, выводит сообщение об ошибке и завершает метод
+                            MessageBox.Show("Произошла ошибка при получении данных из базы");
+                            return;
+                        }*/
 
             /*            ContractsObjectsForm form = new ContractsObjectsForm(response);
                         form.contrData = response;
                         form.Show();*/
 
-            if (name != null)
-            {
-                // Вызываем метод формы и передаем ему выбранный элемент списка
-                string selectItem = name;
-                ContractsObjectsForm cof = new(response);
-                cof.SetTextCOF(selectItem);
-                cof.ShowDialog();
-            }
+            /*            if (name != null)
+                        {
+                            // Вызываем метод формы и передаем ему выбранный элемент списка
+                            string selectItem = name;
+                            ContractsObjectsForm cof = new(response);
+                            cof.SetTextCOF(selectItem);
+                            cof.ShowDialog();
+                        }*/
         }
 
-        async Task<string> GetResponseAsync(string url)
-        {
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(url);
-            response.EnsureSuccessStatusCode();
-            string responseBody = await response.Content.ReadAsStringAsync();
+        /*        async Task<string> GetResponseAsync(string url)
+                {
+                    HttpClient client = new HttpClient();
+                    HttpResponseMessage response = await client.GetAsync(url);
+                    response.EnsureSuccessStatusCode();
+                    string responseBody = await response.Content.ReadAsStringAsync();
 
-            // Добавляем обработку ошибок
-            if (responseBody.Contains("error"))
-            {
-                responseBody = "{\"error\": \"Произошла ошибка при запросе к базе\"}";
-            }
+                    // Добавляем обработку ошибок
+                    if (responseBody.Contains("error"))
+                    {
+                        responseBody = "{\"error\": \"Произошла ошибка при запросе к базе\"}";
+                    }
 
-            return responseBody;
-        }
+                    return responseBody;
+                }*/
 
         private void buttonBackToChoiceForm_Click(object sender, EventArgs e)
         {

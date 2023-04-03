@@ -10,14 +10,17 @@ namespace KONTROL
 {
     public partial class ContractsObjectsForm : Form
     {
-        public string contrData { get; set; }
+        //public string contrData { get; set; }
+        public string name { get; set; }
 
-        public ContractsObjectsForm(string response)
+        public ContractsObjectsForm(string name)
         {
             InitializeComponent();
 
-            DataTable contrData = JsonConvert.DeserializeObject<DataTable>(response);
-            dataGridView1.DataSource = contrData;
+            Name = name;
+            /*            DataTable contrData = JsonConvert.DeserializeObject<DataTable>(response);
+                        dataGridView1.DataSource = contrData;*/
+            MessageBox.Show(name);
         }
 
         public void SetTextCOF(string text)
